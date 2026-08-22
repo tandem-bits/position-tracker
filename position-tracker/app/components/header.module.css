@@ -1,0 +1,10 @@
+.container {
+    background-color: white;
+    margin: 25px;
+    border-radius: 50px;
+}
+
+.siteTitle {
+    margin: 20px;
+    color: black;
+}
