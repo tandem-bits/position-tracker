@@ -2,9 +2,48 @@
     background-color: white;
     margin: 25px;
     border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .siteTitle {
-    margin: 20px;
+    margin: 30px;
     color: black;
+}
+
+.navBar {
+    margin: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.navOption {
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(158, 213, 244);
+    padding: 12px;
+    border-radius: 20px;
+    border: 2px solid black;
+    margin: 0; 
+}
+
+.navOption:hover {
+    background-color: rgb(2, 34, 93);
+    color: white;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .navBar {
+        gap: 8px;
+        margin: 20px;
+    }
+    
+    .navOption {
+        padding: 8px;
+    }
 }
