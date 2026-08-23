@@ -6,14 +6,29 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    z-index: -101;
 }
 
 .waterfallImage {
     position: fixed;
-    left: 140px;
+    left: 105px;
     top: 0px;
 
     height: 100vh;
-    z-index: -100;
+    z-index: 1;
+}
+
+.loginbox {
+    animation: slideInUp 0.5s ease-out forwards;
+}
+
+@keyframes slideInUp {
+    0% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
