@@ -72,7 +72,7 @@ export async function checkSignup(prevState: formState, formData: FormData) {
   }
 
   // Check if email already exists
-  const matchingUsers = await sql`SELECT id FROM users WHERE email = ${email};`;
+  const matchingUsers = await sql`SELECT username FROM users WHERE email = ${email};`;
   if (matchingUsers.length > 0) {
     return { success: false, message: "Email already signed up. Try logging in." };
   }
@@ -92,5 +92,5 @@ export async function checkSignup(prevState: formState, formData: FormData) {
 export async function logout() {
   const cookieStore = await cookies();
   cookieStore.delete("user-token");
-  redirect("/login");
+  redirect("/loginpage");
 }

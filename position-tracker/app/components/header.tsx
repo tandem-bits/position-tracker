@@ -1,5 +1,6 @@
 import styles from "./header.module.css";
 import Link from "next/link";
+import { logout } from "../actions/actions";
 export default function Header() {
     const menuOptions = [
         { name: "Login/Signup", href: "./loginpage" },
@@ -22,6 +23,7 @@ export default function Header() {
                     </Link>
                 ))}
             </nav>
+            <button className={styles.button} onClick={logout}>Logout</button>
         </div>
     );
 }

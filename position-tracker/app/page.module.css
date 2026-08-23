@@ -20,6 +20,8 @@
 
 .heading {
   font-size: 10vw;
+  position: fixed;
+  top: 200px;
 }
 
 .subheading {
@@ -27,4 +29,10 @@
   position: fixed;
   z-index: 900;
   top: 465px;
+}
+
+@media (max-width: 768px) {
+  .heading {
+    top: 400px;
+  }
 }
