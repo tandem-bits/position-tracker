@@ -11,12 +11,15 @@ const initialState: formState = {
   message: '',
 };
 
+interface props {
+    className?: string;
+}
 
-export default function LoginBox() {
+export default function LoginBox({ className }: props) {
     const [state, formAction, isPending] = useActionState(checkLogin, initialState);
     const [signupState, signupFormAction, signupIsPending] = useActionState(checkSignup, initialState);
     return (
-        <div className={styles.container}>
+        <div className={className}>
             <h1 className={styles.title}>Login/Signup</h1>
 
             <h2 className={styles.subheading}>Login</h2>

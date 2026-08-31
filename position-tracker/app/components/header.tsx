@@ -1,11 +1,26 @@
+"use client";
+
 import styles from "./header.module.css";
 import Link from "next/link";
 import { logout } from "../actions/actions";
+import { useRouter } from "next/navigation";
+
 export default function Header() {
     const menuOptions = [
         { name: "Login/Signup", href: "./loginpage" },
-        { name: "My Saves", href: "./mysaves"}
+        { name: "My Saves", href: "./mysaves" }
     ]
+
+    const router = useRouter();
+
+    const handleLogout = async () => {
+        const res = await logout();
+        if (res.success) {
+            router.push("/loginpage");
+            router.refresh();
+        }
+    };
+
     return (
         <div className={styles.container}>
             <Link href="/">
@@ -23,7 +38,7 @@ export default function Header() {
                     </Link>
                 ))}
             </nav>
-            <button className={styles.button} onClick={logout}>Logout</button>
+            <button className={styles.button} onClick={handleLogout}>Logout</button>
         </div>
     );
 }

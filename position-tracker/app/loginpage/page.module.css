@@ -10,11 +10,11 @@
 
 .waterfallImage {
     position: fixed;
-    left: 105px;
+    left: 95px;
     top: 0px;
 
     height: 100vh;
-    z-index: 1;
+    z-index: 50;
 }
 
 @media (max-width: 700px) {
@@ -25,6 +25,10 @@
 
 .loginbox {
     animation: slideInUp 0.5s ease-out forwards;
+    background-color: white;
+
+    border-radius: 20px;
+    padding: 20px;
 }
 
 @keyframes slideInUp {
